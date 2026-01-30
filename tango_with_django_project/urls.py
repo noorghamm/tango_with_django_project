@@ -18,8 +18,10 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'rango'
+
 urlpatterns = [
-    path('rango/', include('rango.urls')),
+    path('rango/', include(('rango.urls', 'rango'), namespace='rango')),
     path('admin/', admin.site.urls),
 
     
